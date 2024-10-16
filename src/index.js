@@ -51,8 +51,8 @@ function onFormSubmit(evt) {
       page += 1;
       // console.log('onFormSubmit', page);
     })
-    .catch(err => console.log(err));
-  // .finally(() => form.reset());
+    .catch(err => console.log(err))
+    .finally(() => form.reset());
 }
 
 function onLoadMoreClick() {
