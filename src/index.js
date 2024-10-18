@@ -1,11 +1,7 @@
 import { getImages } from '../services/API-service';
+import { getRefs } from '../services/getRefs';
 
-const form = document.querySelector('.search-form');
-const gallery = document.querySelector('.gallery');
-const loadMore = document.querySelector('.load-more');
-const error = document.querySelector('.error');
-const alert = document.querySelector('.alert');
-const endOfCollection = document.querySelector('.collectionEnd');
+const { form, gallery, loadMore, error, alert, endOfCollection } = getRefs();
 
 form.addEventListener('submit', onFormSubmit);
 loadMore.addEventListener('click', onLoadMoreClick);
@@ -51,8 +47,8 @@ function onFormSubmit(evt) {
       page += 1;
       // console.log('onFormSubmit', page);
     })
-    .catch(err => console.log(err))
-    .finally(() => form.reset());
+    .catch(err => console.log(err));
+  // .finally(() => form.reset());
 }
 
 function onLoadMoreClick() {
